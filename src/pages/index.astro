@@ -1,0 +1,357 @@
+---
+const BRAND = "HYDRACODE SOLUTIONS";
+const WHATSAPP = "https://wa.me/56940752095";
+const EMAIL = "contacto@hydracode.cl";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{BRAND}</title>
+    <meta
+      name="description"
+      content="Branding, marketing y desarrollo de software a medida para pymes y emprendedores en Chile."
+    />
+
+    <link rel="stylesheet" href="/styles/global.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const header = document.querySelector(".header");
+        if (!header) return;
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 20) {
+            header.classList.add("header--scrolled");
+          } else {
+            header.classList.remove("header--scrolled");
+          }
+        });
+      });
+    </script></head
+  >
+
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <a class="brand" href="#inicio" aria-label={BRAND}>
+          <img
+            src="/img/logohidracodepng.png"
+            alt="HYDRACODE SOLUTIONS"
+            class="brand__logo"
+          />
+          <span class="sr-only">HYDRACODE SOLUTIONS</span>
+        </a>
+
+        <nav class="nav" aria-label="Navegación">
+          <a href="#servicios">Servicios</a>
+          <a href="#proceso">Proceso</a>
+          <a href="#contacto">Contacto</a>
+          <a class="nav__cta" href={WHATSAPP} target="_blank" rel="noreferrer"
+            >Cotizar</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="hero">
+        <div class="container hero__grid">
+          <div>
+            <p class="kicker">Diseño + Tecnología para pymes</p>
+            <h1>Diseño y tecnología que hacen crecer tu negocio</h1>
+            <p class="lead">
+              Branding, marketing y desarrollo de software a medida para
+              emprendedores y pymes. Entregamos soluciones claras, modernas y
+              escalables.
+            </p>
+
+            <div class="hero__cta">
+              <a
+                class="btn btn--primary"
+                href={WHATSAPP}
+                target="_blank"
+                rel="noreferrer">Cotizar por WhatsApp</a
+              >
+              <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
+            </div>
+
+            <div class="hero__badges" aria-label="Beneficios">
+              <span>Respuesta rápida</span>
+              <span>Enfoque pyme</span>
+              <span>Soluciones a medida</span>
+            </div>
+          </div>
+
+          <div class="hero__card" aria-label="Resumen">
+            <div class="card">
+              <h2>¿Qué hacemos?</h2>
+              <p>
+                Unimos diseño y tecnología para que tu negocio se vea
+                profesional y funcione mejor.
+              </p>
+
+              <div class="card__cols">
+                <div>
+                  <h3>Diseño</h3>
+                  <ul>
+                    <li>Branding</li>
+                    <li>Marketing</li>
+                    <li>Redes sociales</li>
+                    <li>Packaging</li>
+                    <li>Video</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Tecnología</h3>
+                  <ul>
+                    <li>Software a medida</li>
+                    <li>Web</li>
+                    <li>Apps móviles</li>
+                    <li>Consultoría TI</li>
+                  </ul>
+                </div>
+              </div>
+
+              <a class="link" href="#contacto">Cuéntanos tu idea →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicios" class="section">
+        <div class="container">
+          <h2 class="section__title">Servicios</h2>
+          <p class="section__desc">
+            Diseñamos, construimos y optimizamos soluciones para emprendedores y
+            pymes.
+          </p>
+
+          <div class="grid">
+            <article class="tile">
+              <h3>Branding</h3>
+              <p>
+                Identidad visual, lineamientos y material para una marca
+                consistente.
+              </p>
+              <ul>
+                <li>Logo e identidad</li>
+                <li>Manual de marca</li>
+                <li>Brochures e infografías</li>
+              </ul>
+            </article>
+
+            <article class="tile">
+              <h3>Marketing y Redes</h3>
+              <p>Diseño y contenido para comunicar mejor y vender más.</p>
+              <ul>
+                <li>Diseño para RRSS</li>
+                <li>Flyers, afiches</li>
+                <li>Dirección creativa</li>
+              </ul>
+            </article>
+
+            <article class="tile">
+              <h3>Packaging</h3>
+              <p>Diseño de envases y piezas gráficas listas para impresión.</p>
+              <ul>
+                <li>Etiquetas</li>
+                <li>Empaques</li>
+                <li>Mockups</li>
+              </ul>
+            </article>
+
+            <article class="tile">
+              <h3>Video</h3>
+              <p>Edición y dirección para piezas promocionales y contenido.</p>
+              <ul>
+                <li>Edición</li>
+                <li>Reels / cápsulas</li>
+                <li>Guion y dirección</li>
+              </ul>
+            </article>
+
+            <article class="tile">
+              <h3>Desarrollo de Software</h3>
+              <p>
+                Sistemas a medida para digitalizar procesos y ahorrar tiempo.
+              </p>
+              <ul>
+                <li>Levantamiento</li>
+                <li>MVP</li>
+                <li>Escalabilidad</li>
+              </ul>
+            </article>
+
+            <article class="tile">
+              <h3>Web y Apps</h3>
+              <p>Sitios modernos y aplicaciones para operar y crecer.</p>
+              <ul>
+                <li>Landing / corporativa</li>
+                <li>Paneles y sistemas</li>
+                <li>Apps móviles</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="proceso" class="section section--dark">
+        <div class="container">
+          <h2 class="section__title">Cómo trabajamos</h2>
+          <p class="section__desc">
+            Un proceso claro, simple y orientado a resultados.
+          </p>
+
+          <div class="steps">
+            <div class="step">
+              <span class="step__num">01</span>
+              <h3>Diagnóstico</h3>
+              <p>Entendemos tu negocio, objetivos y prioridades.</p>
+            </div>
+            <div class="step">
+              <span class="step__num">02</span>
+              <h3>Propuesta</h3>
+              <p>Definimos alcance, plazos y entregables con claridad.</p>
+            </div>
+            <div class="step">
+              <span class="step__num">03</span>
+              <h3>Ejecución</h3>
+              <p>Diseñamos y desarrollamos con revisiones controladas.</p>
+            </div>
+            <div class="step">
+              <span class="step__num">04</span>
+              <h3>Entrega y Soporte</h3>
+              <p>
+                Implementamos y dejamos todo funcionando, con acompañamiento.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" class="section">
+        <div class="container contact">
+          <div>
+            <h2 class="section__title">Contacto</h2>
+            <p class="section__desc">
+              Cuéntanos qué necesitas y te respondemos con una propuesta clara.
+            </p>
+
+            <div class="contact__cards">
+              <a
+                class="contact__card"
+                href={WHATSAPP}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <h3>WhatsApp</h3>
+                <p>Respuesta rápida para cotizar.</p>
+              </a>
+
+              <a class="contact__card" href={`mailto:${EMAIL}`}>
+                <h3>Email</h3>
+                <p>{EMAIL}</p>
+              </a>
+            </div>
+          </div>
+
+          <form class="form" onsubmit="return false">
+            <label>
+              Nombre
+              <input
+                type="text"
+                name="nombre"
+                placeholder="Tu nombre"
+                required
+              />
+            </label>
+
+            <label>
+              Empresa (opcional)
+              <input
+                type="text"
+                name="empresa"
+                placeholder="Nombre de tu negocio"
+              />
+            </label>
+
+            <label>
+              ¿Qué necesitas?
+              <select name="servicio" required>
+                <option value="">Selecciona un servicio</option>
+                <option>Branding</option>
+                <option>Marketing y redes</option>
+                <option>Packaging</option>
+                <option>Video</option>
+                <option>Desarrollo de software</option>
+                <option>Web / Apps</option>
+                <option>Consultoría TI</option>
+              </select>
+            </label>
+
+            <label>
+              Mensaje
+              <textarea
+                name="mensaje"
+                rows="4"
+                placeholder="Cuéntanos tu idea..."
+                required></textarea>
+            </label>
+
+            <button class="btn btn--primary" id="btnEnviar"
+              >Enviar por WhatsApp</button
+            >
+            <p class="form__hint">
+              Este formulario envía el mensaje directo a WhatsApp.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <small
+          >© {new Date().getFullYear()} HYDRACODE SOLUTIONS. Concepción. Chile.</small
+        >
+        <a class="link" href="#inicio">Volver arriba</a>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.getElementById("btnEnviar");
+
+      btn?.addEventListener("click", () => {
+        const nombreEl = document.querySelector<HTMLInputElement>(
+          'input[name="nombre"]'
+        );
+        const empresaEl = document.querySelector<HTMLInputElement>(
+          'input[name="empresa"]'
+        );
+        const servicioEl = document.querySelector<HTMLSelectElement>(
+          'select[name="servicio"]'
+        );
+        const mensajeEl = document.querySelector<HTMLTextAreaElement>(
+          'textarea[name="mensaje"]'
+        );
+
+        if (!nombreEl || !servicioEl || !mensajeEl) return;
+
+        const nombre = nombreEl.value;
+        const empresa = empresaEl ? empresaEl.value : "";
+        const servicio = servicioEl.value;
+        const mensaje = mensajeEl.value;
+
+        const base = "{WHATSAPP}".split("?")[0];
+        const text = `Hola Hydracode, soy ${nombre}${empresa ? " de " + empresa : ""}. Necesito: ${servicio}. ${mensaje}`;
+        const url = `${base}?text=${encodeURIComponent(text)}`;
+
+        window.open(url, "_blank");
+      });
+    </script>
+  </body>
+</html>
