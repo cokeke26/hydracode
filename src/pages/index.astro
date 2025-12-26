@@ -1,7 +1,7 @@
 ---
-const BRAND = "HYDRACODE SOLUTIONS";
+const BRAND = "HIDRACODE SOLUTIONS";
 const WHATSAPP = "https://wa.me/56940752095";
-const EMAIL = "contacto@hydracode.cl";
+const EMAIL = "contacto.hidracode@gmail.com";
 ---
 
 <!doctype html>
@@ -40,10 +40,10 @@ const EMAIL = "contacto@hydracode.cl";
         <a class="brand" href="#inicio" aria-label={BRAND}>
           <img
             src="/img/logohidracodepng.png"
-            alt="HYDRACODE SOLUTIONS"
+            alt="HIDRACODE SOLUTIONS"
             class="brand__logo"
           />
-          <span class="sr-only">HYDRACODE SOLUTIONS</span>
+          <span class="sr-only">HIDRACODE SOLUTIONS</span>
         </a>
 
         <nav class="nav" aria-label="Navegación">
@@ -199,7 +199,7 @@ const EMAIL = "contacto@hydracode.cl";
         </div>
       </section>
 
-      <section id="proceso" class="section section--dark">
+      <section id="proceso" class="section section--dark reveal">
         <div class="container">
           <h2 class="section__title">Cómo trabajamos</h2>
           <p class="section__desc">
@@ -233,7 +233,7 @@ const EMAIL = "contacto@hydracode.cl";
         </div>
       </section>
 
-      <section id="contacto" class="section">
+      <section id="contacto" class="section reveal">
         <div class="container contact">
           <div>
             <h2 class="section__title">Contacto</h2>
@@ -316,13 +316,15 @@ const EMAIL = "contacto@hydracode.cl";
     <footer class="footer">
       <div class="container footer__inner">
         <small
-          >© {new Date().getFullYear()} HYDRACODE SOLUTIONS. Concepción. Chile.</small
+          >© {new Date().getFullYear()} HIDRACODE SOLUTIONS. Concepción. Chile.</small
         >
         <a class="link" href="#inicio">Volver arriba</a>
       </div>
     </footer>
 
     <script>
+      const WHATSAPP_URL = "https://wa.me/56940752095";
+
       const btn = document.getElementById("btnEnviar");
 
       btn?.addEventListener("click", () => {
@@ -341,17 +343,34 @@ const EMAIL = "contacto@hydracode.cl";
 
         if (!nombreEl || !servicioEl || !mensajeEl) return;
 
-        const nombre = nombreEl.value;
-        const empresa = empresaEl ? empresaEl.value : "";
+        const nombre = nombreEl.value.trim();
+        const empresa = (empresaEl?.value ?? "").trim();
         const servicio = servicioEl.value;
-        const mensaje = mensajeEl.value;
+        const mensaje = mensajeEl.value.trim();
 
-        const base = "{WHATSAPP}".split("?")[0];
-        const text = `Hola Hydracode, soy ${nombre}${empresa ? " de " + empresa : ""}. Necesito: ${servicio}. ${mensaje}`;
-        const url = `${base}?text=${encodeURIComponent(text)}`;
+        const texto = `Hola Hydracode, soy ${nombre}${empresa ? " de " + empresa : ""}. Necesito: ${servicio}. ${mensaje}`;
+        const url = `${WHATSAPP_URL}?text=${encodeURIComponent(texto)}`;
 
         window.open(url, "_blank");
       });
+    </script>
+
+    <script>
+      const reveals = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("reveal--visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      reveals.forEach((el) => observer.observe(el));
     </script>
   </body>
 </html>

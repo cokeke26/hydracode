@@ -523,3 +523,31 @@ textarea{ resize: vertical; }
   background: #0b0f17;
   color: rgba(255,255,255,.92);
 }
+
+/* =========================
+   Scroll reveal
+========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity .6s ease,
+    transform .6s ease;
+  will-change: opacity, transform;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respeta accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
