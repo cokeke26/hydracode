@@ -348,7 +348,7 @@ const EMAIL = "contacto.hidracode@gmail.com";
         const servicio = servicioEl.value;
         const mensaje = mensajeEl.value.trim();
 
-        const texto = `Hola Hydracode, soy ${nombre}${empresa ? " de " + empresa : ""}. Necesito: ${servicio}. ${mensaje}`;
+        const texto = `Hola Hidracode, soy ${nombre}${empresa ? " de " + empresa : ""}. Necesito: ${servicio}. ${mensaje}`;
         const url = `${WHATSAPP_URL}?text=${encodeURIComponent(texto)}`;
 
         window.open(url, "_blank");
